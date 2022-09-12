@@ -15,6 +15,10 @@ conn = psycopg2.connect(
     password="password",
     port=5432)
 
+#need to define database as a python variable for it to get picked up in the print statment below
+database="database"
+
+
 # put the print statement of your database where X is name of your DB
 print("Running Query on {}:".format(database))
 
