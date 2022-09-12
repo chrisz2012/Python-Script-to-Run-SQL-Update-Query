@@ -1,7 +1,7 @@
 import psycopg2
 import sys
 
-#firstarg lets you pass your sql query wrapped in double quotes so it works like this
+# firstarg lets you pass your sql query wrapped in double quotes so it works like this
 # python3 ./python-script-to-run-sql-update-query.py "update users set id = 123 where id = 120;" 
 # the script then connects to your DB and executes the query on the remote host
 
@@ -27,10 +27,10 @@ print(sql)
 
 cur.execute(sql)
 
-#below prints the row count of the amount of rows that were updated in the database
+# below prints the row count of the amount of rows that were updated in the database
 updated_rows = cur.rowcount
 print("UPDATE {}".format(updated_rows))
 
-#connection then gets closed by the database
+# connection then gets closed by the database
 conn.commit()
 conn.close()
