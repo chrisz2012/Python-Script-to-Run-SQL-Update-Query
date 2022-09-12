@@ -7,9 +7,6 @@ import sys
 
 firstarg=sys.argv[1]
 
-# put the print statement of your database where X is name of your DB
-print("Running Query on X Database:")
-
 # In the conn spaces fill out your database connection parameters
 conn = psycopg2.connect(
     host="database_hostname",
@@ -17,6 +14,9 @@ conn = psycopg2.connect(
     user="user",
     password="password",
     port=5432)
+
+# put the print statement of your database where X is name of your DB
+print("Running Query on {}:".format(database))
 
 conn.autocommit = True
 cur = conn.cursor()
