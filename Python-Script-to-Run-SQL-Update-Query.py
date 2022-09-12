@@ -27,9 +27,14 @@ print(sql)
 
 cur.execute(sql)
 
-# below prints the row count of the amount of rows that were updated in the database
+# below prints the row count of the amount of rows that were updated, inserted, or deleted in the database
 updated_rows = cur.rowcount
-print("UPDATE {}".format(updated_rows))
+if firstarg[0:6].lower() == "update":
+	print("UPDATE {}".format(updated_rows))
+elif firstarg[0:6] == "insert":
+	print("INSERT {}".format(updated_rows))
+elif firstarg[0:6] == "delete":
+    print("DELETE {}".format(updated_rows))
 
 # connection then gets closed by the database
 conn.commit()
