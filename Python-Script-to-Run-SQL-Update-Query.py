@@ -35,9 +35,9 @@ cur.execute(sql)
 updated_rows = cur.rowcount
 if firstarg[0:6].lower() == "update":
 	print("UPDATE {}".format(updated_rows))
-elif firstarg[0:6] == "insert":
+elif firstarg[0:6].lower() == "insert":
 	print("INSERT {}".format(updated_rows))
-elif firstarg[0:6] == "delete":
+elif firstarg[0:6].lower() == "delete":
     print("DELETE {}".format(updated_rows))
 
 # connection then gets closed by the database
